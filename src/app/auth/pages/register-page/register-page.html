@@ -1,0 +1,44 @@
+<form
+  class="flex flex-col gap-2"
+  formGroup="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <label class="input">
+    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2.5"
+        fill="none"
+        stroke="currentColor"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </g>
+    </svg>
+    <input type="text" class="grow" placeholder="Email" formControlName="email" />
+  </label>
+  <label class="input">
+    Password
+    <input type="password" class="grow" placeholder="Password" formControlName="password" />
+  </label>
+  <label class="input">
+    Full Name
+    <input type="text" class="grow" placeholder="Password" formControlName="fullName" />
+  </label>
+  <button
+    class="btn btn-secondary"
+    type="submit"
+  >
+    Registro
+  </button>
+</form>
+
+@if (hasError()) {
+    <div role="alert" class="alert alert-error animate-fadeIn fixed bottom-5 right-5 w-52">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span>Ya existe una cuenta con esos datos</span>
+    </div>
+  }
