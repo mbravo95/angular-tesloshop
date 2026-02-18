@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from "../../../../../node_modules/@angular/router/types/_router_module-chunk";
 import { FrontNavbar } from "../../components/front-navbar/front-navbar";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-store-front-layout',
