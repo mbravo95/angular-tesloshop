@@ -89,6 +89,7 @@ export class AuthService {
   }
 
   private handleAuthSuccess({user, token}: AuthResponse) {
+    console.log('Autenticación exitosa', {user, token});
     this._authStatus.set('authenticated');
     this._user.set(user);
     this._token.set(token);
@@ -97,6 +98,7 @@ export class AuthService {
   }
 
   private hanldeAuthError(error: any) {
+    console.log('Error en la autenticación', error);
     this.logout();
     return of(false);
   }
