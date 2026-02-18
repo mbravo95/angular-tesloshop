@@ -39,6 +39,7 @@ export class AuthService {
   });
 
   isAdmin = computed<boolean|null>(() => {
+    console.log('Checking if user is admin', this._user());
     return this._user()!.roles.includes('admin') ?? false;
   });
 
