@@ -21,7 +21,10 @@ export class LoginPage {
   });
 
   onSubmit(){
+    console.log(this.loginForm.value);
+    console.log('Di click en el botón de login');
     if(this.loginForm.invalid){
+      console.log('El formulario es inválido');
       this.hasError.set(true);
       setTimeout(() => {
         this.hasError.set(false);
@@ -32,13 +35,17 @@ export class LoginPage {
     const {email = '', password = ''} = this.loginForm.value;
 
     this.authService.login(email!, password!).subscribe(isAuth => {
+      console.log('Invoque el servicio de autenticación');
       if(isAuth){
+        console.log('Esta autenticado');
         this.router.navigateByUrl('/');
         return;
       }
 
       this.hasError.set(true);
+      console.log('Muestro el error');
       setTimeout(() => {
+        console.log('Oculto el error');
         this.hasError.set(false);
       }, 2000);
     });
