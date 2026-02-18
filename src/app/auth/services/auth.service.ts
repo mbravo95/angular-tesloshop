@@ -45,7 +45,7 @@ export class AuthService {
 
 
   login(email: string, password: string): Observable<boolean>{
-    return this.http.post<AuthResponse>(`${baseUrl}/auth/login)`, {
+    return this.http.post<AuthResponse>(`${baseUrl}/auth/login`, {
       email,
       password
     }).pipe(
