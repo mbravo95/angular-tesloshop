@@ -65,6 +65,7 @@ export class ProductDetails implements OnInit {
   async onSubmit(){
     console.log('Entre al submit');
     const isValid = this.productForm.valid;
+    console.log('El formulario tiene estado: ', isValid);
 
     console.log('Estado del form: ', this.productForm);
     this.productForm.markAllAsTouched();
