@@ -66,6 +66,7 @@ export class ProductDetails implements OnInit {
     console.log('Entre al submit');
     const isValid = this.productForm.valid;
 
+    console.log('Estado del form: ', this.productForm);
     this.productForm.markAllAsTouched();
 
     if(!isValid) return;
