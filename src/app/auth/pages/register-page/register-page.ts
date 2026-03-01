@@ -12,6 +12,7 @@ export class RegisterPage {
   authService = inject(AuthService);
   fb = inject(FormBuilder);
   hasError = signal(false);
+  mensajeError = signal('');
   isPosting = signal(false);
   router = inject(Router);
 
@@ -24,6 +25,7 @@ export class RegisterPage {
   onSubmit(){
     if(this.registerForm.invalid){
       this.hasError.set(true);
+      this.mensajeError.set('Debe completar todos los campos');
       setTimeout(() => {
         this.hasError.set(false);
       }, 2000);
@@ -39,6 +41,7 @@ export class RegisterPage {
       }
 
       this.hasError.set(true);
+      this.mensajeError.set('Existe una cuenta con esos datos');
       setTimeout(() => {
         this.hasError.set(false);
       }, 2000);
