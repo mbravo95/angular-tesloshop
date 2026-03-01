@@ -122,7 +122,7 @@ export class ProductsService {
           ...productLike,
           images: [...imageNames]
         })),
-        switchMap(createdProduct =>  this.http.post<Product>(`${baseUrl}/products`, { product: createdProduct })),
+        switchMap(createdProduct =>  this.http.post<Product>(`${baseUrl}/products`, createdProduct )),
         tap(product => this.updateProductCache(product))
       );
   }
