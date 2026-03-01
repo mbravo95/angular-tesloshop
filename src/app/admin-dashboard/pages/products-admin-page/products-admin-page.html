@@ -26,4 +26,4 @@
   <button class="btn btn-primary" routerLink="/admin/products/new">Nuevo producto</button>
 </div>
 
-<product-table [products]="productsResource.value()!.products" />
+<product-table [products]="productsResource.value()?.products ?? []" />
