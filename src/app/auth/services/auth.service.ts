@@ -61,10 +61,7 @@ export class AuthService {
       fullName
     }).pipe(
       map(resp => true),
-      catchError((error: any) => {
-        console.log(error);
-        of(false);
-      })
+      catchError((error: any) => of(false))
     );
   }
 
