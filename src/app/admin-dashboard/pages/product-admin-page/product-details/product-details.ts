@@ -63,12 +63,14 @@ export class ProductDetails implements OnInit {
   }
 
   async onSubmit(){
+    console.log('Entre al submit');
     const isValid = this.productForm.valid;
 
     this.productForm.markAllAsTouched();
 
     if(!isValid) return;
     const formValue = this.productForm.value;
+    console.log('El formulario es valido y contiene: ', formValue);
 
     const productLike: Partial<Product> = {
       ...(formValue as any),
